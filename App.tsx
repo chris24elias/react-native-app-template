@@ -2,13 +2,16 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './src/Navigation/Navigation';
 import ReduxStore from './src/Store/ReduxStore';
+import ThemeContext from './src/Theme/index';
 
 const App = () => {
   return (
     <ReduxStore>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
+      <ThemeContext>
+        <NavigationContainer>
+          <Navigation />
+        </NavigationContainer>
+      </ThemeContext>
     </ReduxStore>
   );
 };
