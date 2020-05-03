@@ -1,5 +1,11 @@
-export interface StoreModel {}
+import todosModel, {TodosModel} from './todosModel';
 
-const model: StoreModel = {};
+export interface StoreModel {
+  todosModel: TodosModel;
+}
+
+const model: StoreModel = {
+  todosModel,
+};
 
 export default model;
