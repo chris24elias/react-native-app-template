@@ -13,19 +13,11 @@
 
 ```sh
 
-
-
 $ git clone https://github.com/chris24elias/react-native-app-template.git
-
-
 
 $ cd react-native-app-template
 
-
-
 $ yarn
-
-
 
 ```
 
@@ -33,14 +25,8 @@ $ yarn
 
 ```sh
 
-
-
 $ yarn global add react-native-rename
 
-
-
 $ react-native-rename <newName>
-
-
 
 ```
