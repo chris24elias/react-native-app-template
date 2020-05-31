@@ -17,6 +17,8 @@ $ git clone https://github.com/chris24elias/react-native-app-template.git
 
 $ cd react-native-app-template
 
+$ rm -rf ./.git
+
 $ yarn
 
 ```
