@@ -6,6 +6,8 @@
 - redux-persist for data persistence
 - Reactotron and Flipper for debugging
 - React Native UI Kitten for UI Library and Theming (eva design)
+- Theming using hooks!
+- Built in Authentication Flow 
 
 ## Getting Started
 
