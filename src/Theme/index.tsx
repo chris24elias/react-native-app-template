@@ -1,19 +1,16 @@
-import React from 'react';
-import * as eva from '@eva-design/eva';
-import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
-import {EvaIconsPack} from '@ui-kitten/eva-icons';
+import {useContext} from 'react';
+import {ThemeContext} from './ThemeContext';
+import {Theme} from './themes';
 
-interface Props {
-  children: any;
+interface ThemeContext {
+  theme: Theme;
+  themes: Theme[];
+  setTheme: (id: string) => void;
 }
 
-const ThemeContext = ({children}: Props) => {
-  return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <IconRegistry icons={EvaIconsPack} />
-      {children}
-    </ApplicationProvider>
-  );
+const useTheme = () => {
+  let theme: ThemeContext = useContext(ThemeContext);
+  return theme;
 };
 
-export default ThemeContext;
+export default useTheme;
