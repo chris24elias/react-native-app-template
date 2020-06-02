@@ -29,12 +29,12 @@ export const AuthContextProvider = (props: any) => {
       'Are you sure you want to logout from the app',
       [
         {
-          text: 'Yes, Logout',
-          onPress: _logoutUser,
-        },
-        {
           type: 'cancel',
           text: 'No, Stay here',
+        },
+        {
+          text: 'Yes, Logout',
+          onPress: _logoutUser,
         },
       ],
     );
