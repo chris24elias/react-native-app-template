@@ -30,6 +30,7 @@ const store = createStore(model, {
       {
         key: 'easypeasystate',
         storage: AsyncStorage,
+        blacklist: ['auth'],
       },
       reducer,
     ),

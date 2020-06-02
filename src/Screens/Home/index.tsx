@@ -6,6 +6,7 @@ import AppHeader from '../../Components/AppHeader';
 import {useStoreState, useStoreActions} from '../../Store';
 import {Button, Text} from '../../Components/Common';
 import useTheme from '../../Theme';
+import useAuth from '../../Auth';
 
 interface Props {
   navigation: NavigationProp<any>;
@@ -17,9 +18,9 @@ const HomeScreen = ({navigation, route}: Props) => {
   const addTodo = useStoreActions((actions) => actions.todosModel.addTodo);
 
   const [inputText, setInputText] = useState('');
-
   const {theme, themes, setTheme} = useTheme();
-  console.log('THEME', theme);
+  const {logout} = useAuth();
+
   return (
     <Layout style={{flex: 1}}>
       <AppHeader title="Home" />
@@ -66,7 +67,7 @@ const HomeScreen = ({navigation, route}: Props) => {
 
         {themes.map((thm) => {
           return (
-            <TouchableOpacity onPress={() => setTheme(thm.key)}>
+            <TouchableOpacity key={thm.key} onPress={() => setTheme(thm.key)}>
               <View
                 style={{
                   height: 40,
@@ -80,6 +81,12 @@ const HomeScreen = ({navigation, route}: Props) => {
           );
         })}
       </ScrollView>
+
+      <Button
+        text="LOGOUT"
+        style={{marginBottom: 25}}
+        onPress={() => logout()}
+      />
     </Layout>
   );
 };

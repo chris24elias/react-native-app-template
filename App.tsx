@@ -4,17 +4,20 @@ import Navigation from './src/Navigation/Navigation';
 import ReduxStore from './src/Store/ReduxStore';
 import UIKitten from './src/UIKitten/index';
 import ThemeContext from './src/Theme/ThemeContext';
+import {AuthContextProvider} from './src/Auth/AuthContext';
 
 const App = () => {
   return (
     <ReduxStore>
-      <ThemeContext>
-        <UIKitten>
-          <NavigationContainer>
-            <Navigation />
-          </NavigationContainer>
-        </UIKitten>
-      </ThemeContext>
+      <AuthContextProvider>
+        <ThemeContext>
+          <UIKitten>
+            <NavigationContainer>
+              <Navigation />
+            </NavigationContainer>
+          </UIKitten>
+        </ThemeContext>
+      </AuthContextProvider>
     </ReduxStore>
   );
 };
