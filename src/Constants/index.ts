@@ -15,3 +15,7 @@ export const STATUS = {
   FETCHING: 'FETCHING',
   FAILED: 'FAILED',
 };
+export const LOCALES = {
+  ENGLISH: {id: 1, name: 'en', label: 'ENGLISH'},
+  HINDI: {id: 2, name: 'hi', label: 'हिंदी'},
+};

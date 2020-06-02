@@ -5,20 +5,23 @@ import ReduxStore from './src/Store/ReduxStore';
 import UIKitten from './src/UIKitten/index';
 import ThemeContext from './src/Theme/ThemeContext';
 import {AuthContextProvider} from './src/Auth/AuthContext';
+import {LocaleContextProvider} from './src/i18n/LocaleContext';
 
 const App = () => {
   return (
-    <ReduxStore>
-      <AuthContextProvider>
-        <ThemeContext>
-          <UIKitten>
-            <NavigationContainer>
-              <Navigation />
-            </NavigationContainer>
-          </UIKitten>
-        </ThemeContext>
-      </AuthContextProvider>
-    </ReduxStore>
+    <LocaleContextProvider>
+      <ReduxStore>
+        <AuthContextProvider>
+          <ThemeContext>
+            <UIKitten>
+              <NavigationContainer>
+                <Navigation />
+              </NavigationContainer>
+            </UIKitten>
+          </ThemeContext>
+        </AuthContextProvider>
+      </ReduxStore>
+    </LocaleContextProvider>
   );
 };
 
