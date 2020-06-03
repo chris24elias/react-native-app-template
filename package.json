@@ -21,8 +21,10 @@
     "beautiful-react-hooks": "^0.23.1",
     "easy-peasy": "^3.3.0",
     "i18n-js": "^3.7.0",
+    "lodash": "^4.17.15",
     "native-base": "^2.13.12",
     "react": "16.11.0",
+    "react-hook-form": "^5.7.2",
     "react-native": "0.62.2",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-bootsplash": "^2.2.4",
@@ -41,7 +43,8 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "remote-redux-devtools": "^0.5.16",
-    "yarn": "^1.22.4"
+    "yarn": "^1.22.4",
+    "yup": "^0.29.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -50,6 +53,7 @@
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.62.0",
     "@types/react-test-renderer": "16.9.2",
+    "@types/yup": "^0.29.2",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^24.9.0",
