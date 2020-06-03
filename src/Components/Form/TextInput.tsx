@@ -3,6 +3,7 @@ import {TextInputProps, Text, View, TouchableOpacity} from 'react-native';
 import {Input, Icon} from '@ui-kitten/components';
 import styles from './styles';
 import get from 'lodash/get';
+import useTheme from '../../Theme';
 
 interface InputProps extends TextInputProps {
   name: string;
@@ -23,10 +24,13 @@ const TextInput = React.forwardRef(
       placeholder,
       multiline,
       returnKeyLabel,
+      value,
+      style,
       ...rest
     }: InputProps,
     ref,
   ) => {
+    const {theme} = useTheme();
     const [secureTextEntry, setSecureTextEntry] = React.useState(secure);
 
     const renderIcon = (style) => (
@@ -43,19 +47,9 @@ const TextInput = React.forwardRef(
         <Input
           ref={ref}
           placeholder={placeholder}
-          //   value={value}
-          //   onChangeText={text => {
-          //     let txt = text;
-          //     if (formatText) {
-          //       txt = formatText(text);
-          //     }
-          //     setValue(txt);
-          //   }}
-          style={{}}
           label={title}
-          //   status={error ? 'danger' : value ? 'success' : 'basic'}
+          status={error ? 'danger' : value ? 'success' : 'basic'}
           caption={error ? (error.message ? error.message : 'Error') : ''}
-          // returnKeyLabel={""}
           returnKeyType={
             !multiline && returnKeyLabel == 'Next'
               ? rest.keyboardType == 'numeric'
@@ -67,6 +61,16 @@ const TextInput = React.forwardRef(
           accessoryRight={secure ? renderIcon : null}
           multiline={multiline}
           autoCapitalize={secure ? 'none' : 'sentences'}
+          style={[
+            {
+              borderColor: error
+                ? theme.Error.main
+                : value
+                ? theme.Success.main
+                : theme.Primary.main,
+            },
+            style,
+          ]}
           {...rest}
         />
       </View>

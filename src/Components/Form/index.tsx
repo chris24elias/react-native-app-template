@@ -7,6 +7,7 @@ interface Props {
   register;
   setValue;
   errors;
+  getValues;
 
   //   ------------------------
   scrollview?: boolean;
@@ -24,10 +25,11 @@ export default ({
   register,
   setValue,
   errors,
+  getValues,
 }: Props) => {
   const InputRefs = React.useRef<any[]>([]);
   const InputNames = React.useRef<string[]>([]);
-
+  const values = getValues();
   React.useEffect(() => {
     InputNames?.current?.forEach((name) => {
       register({name});
@@ -83,6 +85,7 @@ export default ({
         // blurOnSubmit: false,
         key: child.props.name,
         error: errors[child.props.name],
+        value: values[child.props.name],
       },
     });
   };

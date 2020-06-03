@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {View, ScrollView, TouchableOpacity} from 'react-native';
-import {Layout, Input} from '@ui-kitten/components';
+import {Layout} from '@ui-kitten/components';
 import AppHeader from '../../Components/AppHeader';
 import {useStoreState, useStoreActions} from '../../Store';
 import {Button, Text} from '../../Components/Common';
 import useTheme from '../../Theme';
 import useAuth from '../../Auth';
+import TextInput from '../../Components/Form/TextInput';
 
 interface Props {
   navigation: NavigationProp<any>;
@@ -17,6 +18,7 @@ const HomeScreen = ({navigation, route}: Props) => {
   const todos = useStoreState((state) => state.todosModel.todos);
   const addTodo = useStoreActions((actions) => actions.todosModel.addTodo);
 
+  const todoRef = React.useRef(null);
   const [inputText, setInputText] = useState('');
   const {theme, themes, setTheme} = useTheme();
   const {logout} = useAuth();
@@ -24,7 +26,7 @@ const HomeScreen = ({navigation, route}: Props) => {
   return (
     <Layout style={{flex: 1}}>
       <AppHeader title="Home" />
-      <ScrollView style={{padding: 15}}>
+      <ScrollView style={{padding: 15}} keyboardShouldPersistTaps="handled">
         <Text style={{marginBottom: 5}} category="h2">
           TODOS
         </Text>
@@ -36,7 +38,7 @@ const HomeScreen = ({navigation, route}: Props) => {
           );
         })}
         <View style={{marginTop: 10}}>
-          <Input value={inputText} onChangeText={setInputText} />
+          <TextInput onChangeText={setInputText} ref={todoRef} />
           <Button
             text="Add Todo"
             style={{marginTop: 5}}
@@ -44,6 +46,7 @@ const HomeScreen = ({navigation, route}: Props) => {
               if (inputText) {
                 addTodo(inputText);
                 setInputText('');
+                todoRef.current.clear();
               }
             }}
           />

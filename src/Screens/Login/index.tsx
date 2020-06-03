@@ -14,6 +14,7 @@ import Form from '../../Components/Form';
 import TextInput from '../../Components/Form/TextInput';
 import {useForm} from 'react-hook-form';
 import * as yup from 'yup'; // for everything
+import Colors from '../../Constants/Colors';
 interface Props {
   navigation: NavigationProp<any>;
   route: any;
@@ -78,16 +79,18 @@ const Login = ({navigation, route}: Props) => {
   return (
     <Layout style={viewStyles.container}>
       <LinearGradient
-        colors={['#ff7e5f', '#feb47b']}
+        colors={['#0f0c29', '#302b63', '#24243e']}
         style={{...viewStyles.container}}>
         <View style={{flex: 1, paddingTop: 50}}>
           <Form
             scrollview
             contentContainerStyle={{padding: 15}}
-            {...{register, setValue, errors}}>
+            {...{register, setValue, errors, getValues}}>
             <View style={{height: 400, ...viewStyles.center}}>
               <TouchableOpacity>
-                <Text>LOGIN</Text>
+                <Text style={{color: Colors.white}} category="h1">
+                  LOGIN
+                </Text>
               </TouchableOpacity>
             </View>
             <TextInput name="email" title="Email" returnKeyLabel="Next" />
