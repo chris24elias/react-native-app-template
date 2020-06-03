@@ -1,5 +1,5 @@
 const Routes = {
-  HOME_SCREEN: 'HOME_SCREEN',
+  HOME_SCREEN: 'Home',
   LOADING: 'LOADING',
 
   LOGIN_STACK: 'LOGIN_STACK',
@@ -10,6 +10,11 @@ const Routes = {
 
   HOME_STACK: 'HOME_STACK', // HOMESTACK CONTAINER FOR TABS
   HOME_TABS: 'HOME_TABS', //HOME TABS
+
+  PROFILE_SCREEN: 'Profile',
+  SEARCH_SCREEN: 'Explore',
+  PEOPLE_SCREEN: 'People',
+  SETTINGS_SCREEN: 'Settings',
 };
 
 export default Routes;
