@@ -39,7 +39,6 @@ $ react-native-rename <newName>
 
 **Step 3:** Rename XCode Project Completely
 
-<img src="Screenshots/Howtorenamexcodeproject.png"
-     style="height: 500px" />
+<img src="Screenshots/Howtorenamexcodeproject.png"/>
 
 https://stackoverflow.com/questions/33370175/how-do-i-completely-rename-an-xcode-project-i-e-inclusive-of-folders
