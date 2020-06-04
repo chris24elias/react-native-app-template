@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import {Layout, Text, Input} from '@ui-kitten/components';
-import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {useStoreState, useStoreActions} from '../../Store';
 import {View, ScrollView, Keyboard} from 'react-native';
 import {Button} from '../../Components/Common';
-import TextInput from '../../Components/Form/TextInput';
 
 interface Props {}
 
@@ -29,9 +27,16 @@ const CounterComponent = ({}: Props) => {
         TODOS
       </Text>
 
-      <Input style={{marginTop: 5}} onChangeText={setInputText} ref={todoRef} />
+      <Input
+        placeholder="Add Todo"
+        style={{marginTop: 5}}
+        onChangeText={setInputText}
+        ref={todoRef}
+      />
       <Button text="Add Todo" style={{marginTop: 5}} onPress={onAddTodo} />
-
+      <Text>
+        COUNT: <Text data-testid="count">{todos.length}</Text>
+      </Text>
       <ScrollView style={{flex: 1, marginTop: 15}}>
         {todos.map((todo, i) => {
           return (
