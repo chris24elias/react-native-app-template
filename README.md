@@ -8,6 +8,8 @@
 - React Native UI Kitten for UI Library and Theming (eva design)
 - Theming using hooks!
 - Built in Authentication Flow 
+- Built in 60fps Animated Tab Bar
+- Unit tests
 
 ## Getting Started
 
