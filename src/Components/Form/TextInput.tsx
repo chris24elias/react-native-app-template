@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import useTheme from '../../Theme';
 
 interface InputProps extends TextInputProps {
-  name: string;
+  name?: string;
   title?: string;
   secure?: boolean;
   placeholder?: string;
