@@ -7,7 +7,7 @@
 - Reactotron and Flipper for debugging
 - React Native UI Kitten for UI Library and Theming (eva design)
 - Theming using hooks!
-- Built in Authentication Flow 
+- Built in Authentication Flow
 - Built in 60fps Animated Tab Bar
 - Unit tests
 
@@ -36,3 +36,8 @@ $ yarn global add react-native-rename
 $ react-native-rename <newName>
 
 ```
+
+**Step 3:** Rename XCode Project Completely
+
+<img src="Screenshots/Howtorenamexcodeproject.png"
+     style="height: 500px" />
