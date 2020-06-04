@@ -35,12 +35,12 @@ const CounterComponent = ({}: Props) => {
       />
       <Button text="Add Todo" style={{marginTop: 5}} onPress={onAddTodo} />
       <Text>
-        COUNT: <Text data-testid="count">{todos.length}</Text>
+        COUNT: <Text>{todos.length}</Text>
       </Text>
       <ScrollView style={{flex: 1, marginTop: 15}}>
         {todos.map((todo, i) => {
           return (
-            <Text key={i} category="c2">
+            <Text testID="todo-item" key={i} category="c2">
               {todo}
             </Text>
           );

@@ -5,13 +5,15 @@ import {themes} from './themes';
 const STORAGE_KEY = 'THEME_ID';
 export const ThemeContext = React.createContext();
 
-export const ThemeContextProvider = ({children}) => {
-  const [themeID, setThemeID] = useState('');
+export const ThemeContextProvider = ({defaultTheme = '', children}) => {
+  const [themeID, setThemeID] = useState(defaultTheme);
   useEffect(() => {
     (async () => {
-      const storedThemeID = await AsyncStorage.getItem(STORAGE_KEY);
-      if (storedThemeID) setThemeID(storedThemeID);
-      else setThemeID(themes[0].key);
+      if (!defaultTheme) {
+        const storedThemeID = await AsyncStorage.getItem(STORAGE_KEY);
+        if (storedThemeID) setThemeID(storedThemeID);
+        else setThemeID(themes[0].key);
+      }
     })();
   }, []);
 
