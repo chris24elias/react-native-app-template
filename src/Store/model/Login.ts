@@ -4,17 +4,15 @@ import {APP_STATE} from '../../Constants/index';
 import {StoreModel} from '.';
 import {getLoginCredentials, setLoginCredentials} from '../../Auth/Keychain';
 
+export interface LoginCreds {
+  username: string;
+  password: string;
+}
 export interface LoginModel {
   appstate: string;
   changeAppState: Action<LoginModel, string>;
   checkLogin: Thunk<LoginModel, any, any, StoreModel, any>;
-  loginUser: Thunk<
-    LoginModel,
-    {username: string; password: string},
-    any,
-    StoreModel,
-    any
-  >;
+  loginUser: Thunk<LoginModel, LoginCreds, any, StoreModel, any>;
   status: string;
   updateStatus: Action<LoginModel, string>;
 }

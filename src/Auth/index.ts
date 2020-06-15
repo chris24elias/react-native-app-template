@@ -1,9 +1,10 @@
 import {useContext} from 'react';
 import AuthStateContext from './AuthContext';
+import {LoginCreds} from '../Store/model/Login';
 
 interface AuthContext {
   logout: any;
-  login: any;
+  login: (creds: LoginCreds) => void;
   state: string;
 }
 

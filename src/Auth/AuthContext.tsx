@@ -4,6 +4,7 @@ import {APP_STATE} from '../Constants';
 import Routes from '../Navigation/Routes';
 import {useStoreActions, useStoreState} from '../Store';
 import {resetLoginCredentials} from './Keychain';
+import {LoginCreds} from '../Store/model/Login';
 
 const AuthStateContext = React.createContext();
 
@@ -41,7 +42,7 @@ export const AuthContextProvider = (props: any) => {
   }, [_logoutUser]);
 
   const login = useCallback(
-    (reqData) => {
+    (reqData: LoginCreds) => {
       loginUser(reqData);
     },
     [loginUser],
